@@ -46,14 +46,13 @@ function archivoExiste($nombreArchivo){
 
  
 date_default_timezone_set("America/Argentina/Buenos_Aires");
-//$cantidadSemanasAnio = 55;
 
-function cargarAlmanaque($cantidadSemanasAnio = 365, $intervalo = 'minutes'){
+function cargarAlmanaque($cantidadDe, $iteracionEn){
     $semanal = array();
 
-    for ($i=1; $i <= $cantidadSemanasAnio; $i++) { 
-        $desde= "2022-03-13 17:50:00"; 
-        $sumado = date("Y-m-d H:i:s ",strtotime("$desde + $i $intervalo")); 
+    for ($i=1; $i <= $cantidadDe; $i++) { 
+        $desde= "2022-03-13 20:00:00"; 
+        $sumado = date("Y-m-d H:i:s ",strtotime("$desde + $i $iteracionEn")); 
         $sumado = strtotime($sumado);
         array_push($semanal, $sumado);
     }
